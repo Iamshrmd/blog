@@ -79,7 +79,7 @@ import { onMounted } from 'vue';
 </script>
 <template>
     <div class="!grid gap-y-5">
-        <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 px-5 place-items-center xs:mt-40 mt-28 gap-y-10 justify-around w-full">
+        <div class="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:mt-20 xl:grid-cols-4 2xl:grid-cols-5 px-5 place-items-center mt-48 gap-y-10 justify-around w-full">
         <div  v-for="(blog) in filteredBlog" class="min-h-full container max-h-100 rounded-xl border-2 border-[#444] border-solid p-3 flex gap-y-3 flex-col justify-between md:w-72 xs:w-full sm:w-5/6 inline-block" :class="{'!border-[#314493]' : !darkMode}" :key=blog>
 
                 <div class="poster rounded-lg overflow-hidden hover:opacity-80 duration-300 cursor-pointer">
