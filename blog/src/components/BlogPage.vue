@@ -88,7 +88,7 @@ import { onMounted } from 'vue';
                 </div>
                 <div class="text flex flex-col justify-between gap-y-1 sm:min-h-52">
                     <div class="content flex flex-col gap-y-2 ">
-                        <h3 class="text-[#fff]" :class="{'text-[#000]' : !darkMode}">{{ blog.title }}</h3>
+                        <h3 class="text-[#fff]" :class="{'!text-[#000]' : !darkMode}">{{ blog.title }}</h3>
                         <p class="text-[#B8B8BE] text-sm hidden sm:block" :class="{'!text-[#000]' : !darkMode}">{{ blog.des }}</p>
                     </div>
                     <div  class="subjects">
