@@ -3,10 +3,8 @@
     <div class="pl-3 flex items-center gap-x-2 px-5 mt-3" >
       <img class="w-8 h-8" src="../../assets/img/icons8-blog-50-black.png" :class="{'hidden' : !darkMode}">
       <img class="w-8 h-8" src="../../assets/img/icons8-blog-50-white.png" :class="{'hidden' : darkMode}">
-      <div @click="dayMode" class="theme-button border-solid border-3 border-red w-8 h-8 rounded-full flex items-center justify-center">
-          <img class="w-6 h-6" src="../../assets/img/icons8-sun-30.png" :class="{'hidden' : !darkMode}">
-          <img class="w-6 h-6" src="../../assets/img/icons8-moon-50.png" :class="{'hidden' : darkMode}">
-
+      <div @click="dayMode" class="container transition duration-500 theme-button border-solid border-3 border-red w-16 relative bg-[#000] h-8 rounded-full flex items-center ">
+           <span @click="toggleDarkLight" class="transition-all duration-[400ms] ease-linear absolute cursor-pointer bg-cover sun w-6 h-6"></span>
         </div>
     </div>
     <div class="search py-4 my-1 flex justify-center px-5 mx-auto gap-x-2">
@@ -34,7 +32,6 @@ export default {
   methods: {
     searchBlog() {
       this.$emit('search',this.searchWord,'title')
-      // console.log(mainBlogs);
     },
     showSubjects(e) {
       console.log(e.target.textContent);
@@ -42,6 +39,12 @@ export default {
     },
     dayMode(){
       this.$emit('dark')
+    },
+    toggleDarkLight(){
+      const icon= document.querySelector('.sun')
+      icon.classList.toggle('moon')
+      const container = document.querySelector('.container')
+      container.classList.toggle('bg-[#fff]')
     }
   }
 
@@ -49,5 +52,12 @@ export default {
 </script>
 
 <style>
-
+  .sun{
+    background-image: url(../../assets/img/icons8-sun-30.png);
+    left: 50%;
+  }
+  .moon{
+    background-image: url(../../assets/img/icons8-moon-50.png);
+    left:10%;
+  }
 </style>
